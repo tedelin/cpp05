@@ -6,29 +6,33 @@
 #    By: tedelin <tedelin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/15 17:24:24 by tedelin           #+#    #+#              #
-#    Updated: 2023/06/05 14:36:05 by tedelin          ###   ########.fr        #
+#    Updated: 2023/06/16 17:39:51 by tedelin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ex00
-SRC = main.cpp BureauCrat.cpp
-HEADER = BureauCrat.hpp
-OBJ = $(SRC:.cpp=.o)
+SRC = $(addprefix src/, BureauCrat.cpp main.cpp)
+HEADER = $(addprefix include/, BureauCrat.hpp)
+INCLUDE = -I./include
+OBJ = $(patsubst src/%.cpp, obj/%.o, $(SRC))
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
+	$(CC) $(CFLAGS) $(INCLUDE) -o $(NAME) $(OBJ)
 
-%.o: %.cpp $(HEADER)
-	$(CC) $(CFLAGS) -c $< -o $@
-
+obj/%.o: src/%.cpp $(HEADER)
+	mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 clean:
 	rm -f $(OBJ)
+	rm -rf obj
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re
