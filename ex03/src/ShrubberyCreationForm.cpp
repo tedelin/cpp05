@@ -6,7 +6,7 @@
 /*   By: tedelin <tedelin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 12:00:01 by tedelin           #+#    #+#             */
-/*   Updated: 2023/06/16 13:57:14 by tedelin          ###   ########.fr       */
+/*   Updated: 2023/06/16 17:51:55 by tedelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ ShrubberyCreationForm&	ShrubberyCreationForm::operator=(const ShrubberyCreationF
 void	ShrubberyCreationForm::action() const
 {
 	std::ofstream ofs((getTarget() + "_shrubbery").c_str());
+	if (ofs.fail()) {
+		std::cout << "Error Shrubbery: could not open file" << std::endl;
+		return ;
+	}
     ofs << "      /\\\n     /\\*\\\n    /\\O\\*\\\n   /*/\\/\\/\\\n  /\\O\\/\\*\\/\\\n /\\*\\/\\*\\/\\/\\\n/\\O\\/\\/*/\\/O/\\\n      ||\n      ||\n      ||\n";
     ofs.close();
 }
