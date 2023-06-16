@@ -6,7 +6,7 @@
 /*   By: tedelin <tedelin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 13:57:02 by tedelin           #+#    #+#             */
-/*   Updated: 2023/06/06 11:49:53 by tedelin          ###   ########.fr       */
+/*   Updated: 2023/06/16 13:54:22 by tedelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void    BureauCrat::decrementGrade()
         this->_grade++;
 }
 
-void    BureauCrat::signForm(Form& f)
+void    BureauCrat::signForm(AForm& f)
 {
     try {
         f.beSigned(*this);
@@ -67,6 +67,15 @@ void    BureauCrat::signForm(Form& f)
     catch (const std::exception& e) {
         std::cerr << getName() << " couldn't sign " << f.getName() << " because " << e.what() << std::endl;
     }
+}
+
+void	BureauCrat::executeForm(AForm const& form)
+{
+	if (getGrade() > form.getGradeExec())
+		throw GradeTooLowException();
+	if (form.isSigned() == false)
+		throw AForm::NotSignedException();
+	form.action();
 }
 
 std::ostream&   operator<<(std::ostream& o, const BureauCrat& rhs)

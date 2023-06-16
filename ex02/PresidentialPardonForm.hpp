@@ -6,7 +6,7 @@
 /*   By: tedelin <tedelin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 11:35:19 by tedelin           #+#    #+#             */
-/*   Updated: 2023/06/08 12:03:57 by tedelin          ###   ########.fr       */
+/*   Updated: 2023/06/16 13:55:24 by tedelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,17 @@
 # define PRESIDENTIALPARDONFORM_HPP
 # include "AForm.hpp"
 
+class AForm;
+
 class PresidentialPardonForm : public AForm
 {
     public:
-        PresidentialPardonForm(std::string& target);
+        PresidentialPardonForm(const std::string& target);
         PresidentialPardonForm(const PresidentialPardonForm& cpy);
         ~PresidentialPardonForm();
         PresidentialPardonForm& operator=(const PresidentialPardonForm& rhs);
+
+		void	action() const;
 
     private:
         PresidentialPardonForm();

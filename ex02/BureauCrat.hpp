@@ -6,18 +6,18 @@
 /*   By: tedelin <tedelin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 13:54:29 by tedelin           #+#    #+#             */
-/*   Updated: 2023/06/06 10:35:38 by tedelin          ###   ########.fr       */
+/*   Updated: 2023/06/15 10:50:05 by tedelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
-# include "Form.hpp"
+# include "AForm.hpp"
 # include <string>
 # include <iostream>
 # include <stdexcept>
 
-class Form;
+class AForm;
 
 class BureauCrat
 {
@@ -31,7 +31,8 @@ class BureauCrat
         int getGrade() const;
         void incrementGrade();
         void decrementGrade();
-        void signForm(Form& f);
+        void signForm(AForm& f);
+		void executeForm(AForm const& form);
         
         class GradeTooHighException : public std::exception
         {

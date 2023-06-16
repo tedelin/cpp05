@@ -6,13 +6,13 @@
 #    By: tedelin <tedelin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/15 17:24:24 by tedelin           #+#    #+#              #
-#    Updated: 2023/06/08 11:23:59 by tedelin          ###   ########.fr        #
+#    Updated: 2023/06/15 13:55:59 by tedelin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ex01
-SRC = main.cpp BureauCrat.cpp AForm.cpp
-HEADER = BureauCrat.hpp AForm.hpp
+SRC = main.cpp BureauCrat.cpp Form.cpp
+HEADER = BureauCrat.hpp Form.hpp
 OBJ = $(SRC:.cpp=.o)
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
