@@ -6,7 +6,7 @@
 /*   By: tedelin <tedelin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 14:34:38 by tedelin           #+#    #+#             */
-/*   Updated: 2023/06/16 13:58:17 by tedelin          ###   ########.fr       */
+/*   Updated: 2023/06/18 11:47:06 by tedelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main()
     try {
         BureauCrat b("Ted", 1);
         BureauCrat b2("John", 150);
-		ShrubberyCreationForm f("tedelin");
+		ShrubberyCreationForm f("Bender");
         std::cout << f << std::endl;
         b2.signForm(f);
         std::cout << f << std::endl;

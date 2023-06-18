@@ -6,7 +6,7 @@
 /*   By: tedelin <tedelin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 14:34:38 by tedelin           #+#    #+#             */
-/*   Updated: 2023/06/05 14:47:13 by tedelin          ###   ########.fr       */
+/*   Updated: 2023/06/18 10:49:35 by tedelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@ int main()
             b2.incrementGrade();
         }
         std::cout << b2 << std::endl;
+		b.decrementGrade();
+		std::cout << b << std::endl;
         b.incrementGrade();
+		b.incrementGrade();
     }
     catch(const std::exception& e) {
         std::cout << e.what() << std::endl;

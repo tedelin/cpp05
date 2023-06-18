@@ -6,7 +6,7 @@
 /*   By: tedelin <tedelin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 15:59:07 by tedelin           #+#    #+#             */
-/*   Updated: 2023/06/16 17:03:01 by tedelin          ###   ########.fr       */
+/*   Updated: 2023/06/18 11:21:42 by tedelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,19 +41,16 @@ AForm* Intern::make_shrubbery(const std::string& target) const
 	return (new ShrubberyCreationForm(target));
 }
 
-
-typedef AForm* (Intern::*func_ptr)(const std::string&) const;
-
 AForm*	Intern::makeForm(const std::string& form, const std::string& target) const
 {
 	std::string	forms[3] = {"robotomy request", "presidential pardon", "shrubbery creation"};
-	func_ptr	funcs[3] = {&Intern::make_robotomy, &Intern::make_president, &Intern::make_shrubbery};
-	
+	AForm* (Intern::*func_ptr[3])(const std::string&) const = {&Intern::make_robotomy, &Intern::make_president, &Intern::make_shrubbery};
+
 	for (int i = 0; i < 3; i++)
 	{
 		if (form == forms[i]) {
 			std::cout << "Intern creates " << form << std::endl;
-			return ((this->*funcs[i])(target));
+			return ((this->*func_ptr[i])(target));
 		}
 	}
 	throw Intern::InvalidFormException();

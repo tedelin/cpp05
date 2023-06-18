@@ -6,7 +6,7 @@
 /*   By: tedelin <tedelin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 13:57:02 by tedelin           #+#    #+#             */
-/*   Updated: 2023/06/16 13:54:22 by tedelin          ###   ########.fr       */
+/*   Updated: 2023/06/18 11:45:05 by tedelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ void	BureauCrat::executeForm(AForm const& form)
 	if (form.isSigned() == false)
 		throw AForm::NotSignedException();
 	form.action();
+	std::cout << getName() << " executed " << form.getName() << std::endl;
 }
 
 std::ostream&   operator<<(std::ostream& o, const BureauCrat& rhs)
