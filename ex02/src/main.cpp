@@ -6,11 +6,11 @@
 /*   By: tedelin <tedelin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 14:34:38 by tedelin           #+#    #+#             */
-/*   Updated: 2023/06/18 11:47:06 by tedelin          ###   ########.fr       */
+/*   Updated: 2023/06/19 10:35:49 by tedelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "BureauCrat.hpp"
+#include "Bureaucrat.hpp"
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
@@ -19,8 +19,8 @@
 int main()
 {
     try {
-        BureauCrat b("Ted", 1);
-        BureauCrat b2("John", 150);
+        Bureaucrat b("Ted", 1);
+        Bureaucrat b2("John", 150);
 		ShrubberyCreationForm f("Bender");
         std::cout << f << std::endl;
         b2.signForm(f);

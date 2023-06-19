@@ -6,13 +6,13 @@
 #    By: tedelin <tedelin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/15 17:24:24 by tedelin           #+#    #+#              #
-#    Updated: 2023/06/16 17:40:20 by tedelin          ###   ########.fr        #
+#    Updated: 2023/06/19 10:35:49 by tedelin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ex01
-SRC = $(addprefix src/, BureauCrat.cpp Form.cpp  main.cpp)
-HEADER = $(addprefix include/, BureauCrat.hpp Form.hpp)
+SRC = $(addprefix src/, Bureaucrat.cpp Form.cpp  main.cpp)
+HEADER = $(addprefix include/, Bureaucrat.hpp Form.hpp)
 INCLUDE = -I./include
 OBJ = $(patsubst src/%.cpp, obj/%.o, $(SRC))
 CC = c++

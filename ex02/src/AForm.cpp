@@ -6,7 +6,7 @@
 /*   By: tedelin <tedelin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 15:02:53 by tedelin           #+#    #+#             */
-/*   Updated: 2023/06/16 13:54:00 by tedelin          ###   ########.fr       */
+/*   Updated: 2023/06/19 10:35:49 by tedelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ const std::string& AForm::getTarget() const
 	return (this->_target);
 }
 
-void   AForm::beSigned(const BureauCrat& b)
+void   AForm::beSigned(const Bureaucrat& b)
 {
     if (b.getGrade() <= this->_gradeSign)
         this->_signed = true;
@@ -70,7 +70,7 @@ void   AForm::beSigned(const BureauCrat& b)
         throw GradeTooLowException();
 }
 
-void	AForm::execute(BureauCrat const& executor)
+void	AForm::execute(Bureaucrat const& executor)
 {
 	if (executor.getGrade() > getGradeExec())
 		throw GradeTooLowException();

@@ -6,18 +6,18 @@
 /*   By: tedelin <tedelin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 14:53:09 by tedelin           #+#    #+#             */
-/*   Updated: 2023/06/15 13:56:22 by tedelin          ###   ########.fr       */
+/*   Updated: 2023/06/19 10:35:49 by tedelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FORM_HPP
 # define FORM_HPP
-# include "BureauCrat.hpp"
+# include "Bureaucrat.hpp"
 # include <string>
 # include <iostream>
 # include <stdexcept>
 
-class BureauCrat;
+class Bureaucrat;
 
 class Form
 {
@@ -32,7 +32,7 @@ class Form
         bool isSigned() const;
         int getGradeSign() const;
         int getGradeExec() const;
-        void beSigned(const BureauCrat& b);
+        void beSigned(const Bureaucrat& b);
 
         class GradeTooHighException : public std::exception {
             public:

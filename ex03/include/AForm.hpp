@@ -6,18 +6,18 @@
 /*   By: tedelin <tedelin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 14:53:09 by tedelin           #+#    #+#             */
-/*   Updated: 2023/06/16 16:56:55 by tedelin          ###   ########.fr       */
+/*   Updated: 2023/06/19 10:35:49 by tedelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef AFORM_HPP
 # define AFORM_HPP
-# include "BureauCrat.hpp"
+# include "Bureaucrat.hpp"
 # include <string>
 # include <iostream>
 # include <stdexcept>
 
-class BureauCrat;
+class Bureaucrat;
 
 class AForm
 {
@@ -32,8 +32,8 @@ class AForm
         int getGradeSign() const;
         int getGradeExec() const;
 		const std::string& getTarget() const;
-        void beSigned(const BureauCrat& b);
-		void execute(BureauCrat const& executor);
+        void beSigned(const Bureaucrat& b);
+		void execute(Bureaucrat const& executor);
 
 		virtual void	action() const = 0;
 

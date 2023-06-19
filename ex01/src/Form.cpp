@@ -6,7 +6,7 @@
 /*   By: tedelin <tedelin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 15:02:53 by tedelin           #+#    #+#             */
-/*   Updated: 2023/06/15 13:56:22 by tedelin          ###   ########.fr       */
+/*   Updated: 2023/06/19 10:35:49 by tedelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int Form::getGradeExec() const
     return (this->_gradeExec);
 }
 
-void   Form::beSigned(const BureauCrat& b)
+void   Form::beSigned(const Bureaucrat& b)
 {
     if (b.getGrade() <= this->_gradeSign)
         this->_signed = true;

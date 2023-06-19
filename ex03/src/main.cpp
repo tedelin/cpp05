@@ -6,11 +6,11 @@
 /*   By: tedelin <tedelin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 14:34:38 by tedelin           #+#    #+#             */
-/*   Updated: 2023/06/16 16:56:31 by tedelin          ###   ########.fr       */
+/*   Updated: 2023/06/19 10:35:49 by tedelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "BureauCrat.hpp"
+#include "Bureaucrat.hpp"
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
@@ -21,7 +21,7 @@ int main()
 {
 	try {
 		Intern someRandomIntern;
-		BureauCrat b("Bender", 1);
+		Bureaucrat b("Bender", 1);
 		AForm* rrf;
 		AForm* ppf;
 		AForm* scf;

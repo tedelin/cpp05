@@ -6,18 +6,18 @@
 /*   By: tedelin <tedelin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 14:34:38 by tedelin           #+#    #+#             */
-/*   Updated: 2023/06/15 13:56:22 by tedelin          ###   ########.fr       */
+/*   Updated: 2023/06/19 10:35:49 by tedelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "BureauCrat.hpp"
+#include "Bureaucrat.hpp"
 #include "Form.hpp"
 
 int main()
 {
     try {
-        BureauCrat b("Ted", 1);
-        BureauCrat b2("John", 150);
+        Bureaucrat b("Ted", 1);
+        Bureaucrat b2("John", 150);
         Form f("contrat", 1, 1);
         std::cout << f << std::endl;
         b2.signForm(f);

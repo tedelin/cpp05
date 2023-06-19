@@ -1,33 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*   BureauCrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tedelin <tedelin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 13:54:29 by tedelin           #+#    #+#             */
-/*   Updated: 2023/06/05 14:51:43 by tedelin          ###   ########.fr       */
+/*   Updated: 2023/06/19 10:35:49 by tedelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
+# include "Form.hpp"
 # include <string>
 # include <iostream>
 # include <stdexcept>
 
-class BureauCrat
+class Form;
+
+class Bureaucrat
 {
     public:
-        BureauCrat(std::string const & name, int grade);
-        BureauCrat(const BureauCrat& cpy);
-        ~BureauCrat();
-        BureauCrat & operator=(const BureauCrat& rhs);
+        Bureaucrat(std::string const & name, int grade);
+        Bureaucrat(const Bureaucrat& cpy);
+        ~Bureaucrat();
+        Bureaucrat & operator=(const Bureaucrat& rhs);
 
         const std::string& getName() const;
         int getGrade() const;
         void incrementGrade();
         void decrementGrade();
+        void signForm(Form& f);
         
         class GradeTooHighException : public std::exception
         {
@@ -45,6 +49,6 @@ class BureauCrat
         int _grade;
 };
 
-std::ostream&   operator<<(std::ostream& o, const BureauCrat& rhs);
+std::ostream&   operator<<(std::ostream& o, const Bureaucrat& rhs);
 
 #endif
